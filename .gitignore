@@ -1,0 +1,14 @@
+/dist/
+node_modules/
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+*.bak
+*.zip
+*.mov
+*.mp4
+**/LOCK
+**/LOG
+**/LOG.old
+**/original-cos/
