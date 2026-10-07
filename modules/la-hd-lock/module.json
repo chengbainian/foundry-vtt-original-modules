@@ -1,0 +1,20 @@
+{
+  "id": "la-hd-lock",
+  "title": "LA 职业生命骰锁定（LA Hit Dice Lock）",
+  "description": "将 LA 职业等级计入角色总等级与熟练加值，同时锁定其生命骰，不授予普通职业成长。适用于 Foundry V13 / D&D5e 5.3.x。",
+  "version": "1.0.1-v13-port.3",
+  "compatibility": { "minimum": "13", "verified": "13.351", "maximum": "13" },
+  "authors": [
+    { "name": "Cuujm (maintainer)" },
+    { "name": "AI-assisted development" }
+  ],
+  "relationships": {
+    "systems": [{ "id": "dnd5e", "type": "system", "compatibility": { "minimum": "5.3.3", "verified": "5.3.3", "maximum": "5.3.999" } }]
+  },
+  "scripts": ["scripts/la-hd-lock.js"],
+  "readme": "README.md",
+  "license": "LICENSE",
+  "url": "https://github.com/chengbainian/foundry-vtt-original-modules",
+  "manifest": "https://raw.githubusercontent.com/chengbainian/foundry-vtt-original-modules/main/modules/la-hd-lock/module.json",
+  "download": "https://github.com/chengbainian/foundry-vtt-original-modules/releases/latest/download/la-hd-lock.zip"
+}

@@ -1,0 +1,62 @@
+<section data-role="transition-steps">
+  <div class="flexrow">
+    <div class="flex1">
+      <div class="form-group">
+        <label>{{localize
+            "BATTLETRANSITIONS.SCENECONFIG.TRANSITIONCONFIG.LABEL"
+          }}</label>
+      </div>
+    </div>
+    <div class="flex0">
+      <i
+        class="fas fa-fw fa-plus link"
+        data-action="addStep"
+        title="{{localize 'BATTLETRANSITIONS.SCENECONFIG.BUTTONS.ADDSTEP'}}"
+      ></i>
+    </div>
+    <div class="flex0">
+      <i
+        class="fas fa-fw fa-trash-can link"
+        data-action="clearSteps"
+        title="{{localize 'BATTLETRANSITIONS.SCENECONFIG.BUTTONS.CLEARSTEPS'}}"
+      ></i>
+    </div>
+  </div>
+  <div class="step-body">
+    <div>
+      <select
+        name="stepList"
+        id="stepList"
+        style="height:100%; width:100%"
+        size="5"
+        class="bt multiselect"
+        data-action="selectStep"
+      >
+      </select>
+    </div>
+    <div
+      data-role="transition-config"
+      class="scrollable"
+      style="height:256px;overflow-y:auto;margin-bottom:10px;"
+    ></div>
+    <div>
+      <button data-action="addStep" type="button" style="width:100%">
+        <i class="fas fa-plus"></i>
+        {{localize "BATTLETRANSITIONS.SCENECONFIG.BUTTONS.ADDSTEP"}}
+      </button>
+    </div>
+    <div>
+      <button
+        type="button"
+        data-action="deleteStep"
+        disabled
+        style="width:100%;"
+      >
+        <i class="fas fa-trash"></i>
+        <span data-role="delete-step-label">
+          {{localize "BATTLETRANSITIONS.SCENECONFIG.BUTTONS.REMOVE" name=""}}
+        </span>
+      </button>
+    </div>
+  </div>
+</section>

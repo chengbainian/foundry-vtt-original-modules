@@ -1,0 +1,49 @@
+{
+  "id": "flame-burn",
+  "label": "燃烧转场 V6",
+  "description": "保留原 Battle Transitions 宏的并行序列：黑场遮罩维持 2 秒，同时全屏播放燃烧 WebM。",
+  "sequence": [
+    {
+      "id": "flame-burn-parallel",
+      "type": "parallel",
+      "version": "1.1.0",
+      "sequences": [
+        [
+          {
+            "id": "flame-burn-wait",
+            "type": "wait",
+            "duration": 2000,
+            "version": "1.1.0",
+            "label": ""
+          },
+          {
+            "id": "flame-burn-remove-overlay",
+            "type": "removeoverlay",
+            "version": "1.1.0"
+          }
+        ],
+        [
+          {
+            "id": "flame-burn-video",
+            "type": "video",
+            "volume": 100,
+            "clear": true,
+            "file": "modules/battle-transitions/assets/videos/burn-transition-v6.webm",
+            "bgSizingMode": "stretch",
+            "backgroundType": "color",
+            "backgroundImage": "",
+            "backgroundColor": "#00000000",
+            "videoSizingMode": "stretch",
+            "version": "1.1.9",
+            "chromaKey": "#0CA023",
+            "chromaRange": [0.11, 0.22],
+            "enableChromaKey": false,
+            "label": "",
+            "keyRange": [0.11, 0.22]
+          }
+        ]
+      ],
+      "label": ""
+    }
+  ]
+}

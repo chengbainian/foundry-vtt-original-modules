@@ -1,0 +1,85 @@
+<section class="ct-pack-manager">
+  <header class="ct-pack-manager__intro">
+    <h2><i class="fa-solid fa-clapperboard"></i> 过场效果包</h2>
+    <p>统一管理内置效果、网址订阅、本地 JSON 包，以及其他模组通过 API 注册的效果。复杂脚本只由已安装模组提供。</p>
+    <div class="ct-pack-manager__toolbar">
+      <button type="button" data-action="import-json"><i class="fa-solid fa-file-import"></i> 导入 JSON 效果包</button>
+      <button type="button" data-action="upload-media"><i class="fa-solid fa-cloud-arrow-up"></i> 上传/选择媒体</button>
+      <button type="button" data-action="refresh-all"><i class="fa-solid fa-rotate"></i> 检查全部更新</button>
+      <button type="button" data-action="open-transition"><i class="fa-solid fa-wand-magic-sparkles"></i> 打开转场面板</button>
+      <input data-role="json-file" type="file" accept="application/json,.json" hidden>
+    </div>
+  </header>
+
+  <fieldset>
+    <legend>从网址订阅效果包</legend>
+    <div class="ct-pack-manager__source-form">
+      <label>
+        <span>显示名称（可留空）</span>
+        <input name="source-label" type="text" placeholder="例如：我的战役转场包">
+      </label>
+      <label class="wide">
+        <span>效果包 JSON 直链</span>
+        <input name="source-url" type="url" placeholder="https://example.com/cinematic-pack.json">
+      </label>
+      <button type="button" data-action="add-source"><i class="fa-solid fa-plus"></i> 添加并载入</button>
+    </div>
+
+    {{#if hasSources}}
+    <div class="ct-pack-manager__list">
+      {{#each sources}}
+      <article class="ct-pack-manager__source {{#if error}}is-error{{/if}}">
+        <label class="ct-pack-manager__switch" title="启用或停用这个网址源">
+          <input type="checkbox" data-action="toggle-source" data-source-id="{{id}}" {{#if enabled}}checked{{/if}}>
+          <span></span>
+        </label>
+        <div class="ct-pack-manager__details">
+          <strong>{{label}}</strong>
+          <code>{{url}}</code>
+          <small>{{status}}；上次检查：{{lastChecked}}</small>
+        </div>
+        <div class="ct-pack-manager__row-actions">
+          <button type="button" data-action="refresh-source" data-source-id="{{id}}" title="立即检查并载入最新版"><i class="fa-solid fa-rotate"></i></button>
+          <button type="button" data-action="remove-source" data-source-id="{{id}}" title="移除网址源"><i class="fa-solid fa-trash"></i></button>
+        </div>
+      </article>
+      {{/each}}
+    </div>
+    {{else}}
+    <p class="notes">尚未添加网址源。添加后，每次进入世界会自动读取当前版本，也可随时手动检查更新。</p>
+    {{/if}}
+  </fieldset>
+
+  <fieldset class="ct-pack-manager__installed">
+    <legend>当前已注册效果包</legend>
+    {{#if hasPacks}}
+    <div class="ct-pack-manager__cards">
+      {{#each packs}}
+      <article class="ct-pack-manager__card">
+        <div class="ct-pack-manager__card-title">
+          <strong>{{label}}</strong>
+          <span>v{{version}}</span>
+        </div>
+        <p>{{description}}</p>
+        <dl>
+          <dt>ID</dt><dd><code>{{id}}</code></dd>
+          <dt>来源</dt><dd>{{sourceLabel}}</dd>
+          <dt>内容</dt><dd>{{battlePresetCount}} 个视频/序列预设，{{transitionCount}} 个代码转场</dd>
+        </dl>
+        {{#if isImported}}
+        <button type="button" class="ct-pack-manager__remove-import" data-action="remove-import" data-pack-id="{{id}}"><i class="fa-solid fa-trash"></i> 删除本地导入</button>
+        {{/if}}
+      </article>
+      {{/each}}
+    </div>
+    {{else}}
+    <p class="notes">当前没有已注册效果包。</p>
+    {{/if}}
+  </fieldset>
+
+  <footer class="ct-pack-manager__footer">
+    <span>平台 API v{{apiVersion}}</span>
+    <span>模组 {{moduleVersion}}</span>
+    <span>媒体目录：<code>Data/{{mediaDirectory}}</code></span>
+  </footer>
+</section>

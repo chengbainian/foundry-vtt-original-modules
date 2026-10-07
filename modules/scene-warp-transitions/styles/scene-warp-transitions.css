@@ -1,0 +1,31 @@
+.swt-overlay {
+  --swt-blackout: 0;
+  --swt-veil: 0;
+  position: fixed;
+  z-index: 100000;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: all;
+  background: rgb(0 0 0 / var(--swt-blackout));
+}
+
+.swt-bridge {
+  position: absolute;
+  inset: 0;
+  opacity: var(--swt-veil);
+  background: radial-gradient(ellipse at center, rgb(155 0 0 / 0.35) 0%, rgb(35 0 0 / 0.14) 22%, transparent 58%);
+  pointer-events: none;
+  transition: background 120ms linear;
+}
+
+.swt-overlay.swt-arrival .swt-bridge {
+  background: radial-gradient(ellipse at center, rgb(18 70 195 / 0.26) 0%, rgb(5 18 75 / 0.12) 24%, transparent 60%);
+}
+
+.swt-dialog-form .form-group > label {
+  flex: 2;
+}
+
+.swt-dialog-form .notes {
+  margin-top: 0;
+}

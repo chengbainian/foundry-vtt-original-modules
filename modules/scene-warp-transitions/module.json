@@ -1,0 +1,30 @@
+{
+  "id": "scene-warp-transitions",
+  "title": "Scene Warp Transitions / 场景时空漩涡转场",
+  "description": "GM 发起同步场景切换，所有客户端播放红移／蓝移漩涡画布转场。",
+  "version": "1.2.0",
+  "authors": [
+    {
+      "name": "Cuujm (maintainer)"
+    },
+    {
+      "name": "AI-assisted development"
+    }
+  ],
+  "compatibility": {
+    "minimum": "12",
+    "verified": "14",
+    "maximum": "14"
+  },
+  "esmodules": [
+    "scripts/scene-warp-transitions.js"
+  ],
+  "styles": [
+    "styles/scene-warp-transitions.css"
+  ],
+  "socket": true,
+  "license": "LICENSE",
+  "url": "https://github.com/chengbainian/foundry-vtt-original-modules",
+  "manifest": "https://raw.githubusercontent.com/chengbainian/foundry-vtt-original-modules/main/modules/scene-warp-transitions/module.json",
+  "download": "https://github.com/chengbainian/foundry-vtt-original-modules/releases/latest/download/scene-warp-transitions.zip"
+}

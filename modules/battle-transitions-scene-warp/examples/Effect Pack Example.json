@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "example.cinematic-pack",
+  "label": "过场效果包示例",
+  "description": "可在配置设定的过场效果包管理器中直接导入。",
+  "version": "1.0.0",
+  "presets": [
+    {
+      "id": "example.short-black-fade",
+      "label": "短黑场",
+      "description": "显示黑场，等待 800 毫秒后移除遮罩。",
+      "sequence": [
+        {
+          "id": "example-wait",
+          "type": "wait",
+          "duration": 800,
+          "version": "1.1.0",
+          "label": ""
+        },
+        {
+          "id": "example-remove-overlay",
+          "type": "removeoverlay",
+          "version": "1.1.0"
+        }
+      ]
+    }
+  ]
+}

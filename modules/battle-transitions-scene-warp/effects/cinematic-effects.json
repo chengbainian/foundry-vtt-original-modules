@@ -1,0 +1,20 @@
+{
+  "entries": [
+    {
+      "type": "battle-preset",
+      "path": "effects/presets/flame-burn.json"
+    },
+    {
+      "type": "battle-preset",
+      "path": "effects/presets/flame-burn-v4.json"
+    },
+    {
+      "type": "battle-preset",
+      "path": "effects/presets/flame-burn-v5.json"
+    },
+    {
+      "type": "scene-extension",
+      "entry": "effects/scene-extensions/soft-white-fade.mjs"
+    }
+  ]
+}

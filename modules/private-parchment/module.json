@@ -1,0 +1,30 @@
+{
+  "id": "private-parchment",
+  "title": "Private Parchment / 私密羊皮纸",
+  "description": "GM 可向指定玩家私发纸页消息，支持文字、背景图片或视频与自定义字体。",
+  "version": "1.1.0",
+  "authors": [
+    {
+      "name": "Cuujm (maintainer)"
+    },
+    {
+      "name": "AI-assisted development"
+    }
+  ],
+  "compatibility": {
+    "minimum": "12",
+    "verified": "14",
+    "maximum": "14"
+  },
+  "esmodules": [
+    "scripts/private-parchment.js"
+  ],
+  "styles": [
+    "styles/private-parchment.css"
+  ],
+  "socket": true,
+  "license": "LICENSE",
+  "url": "https://github.com/chengbainian/foundry-vtt-original-modules",
+  "manifest": "https://raw.githubusercontent.com/chengbainian/foundry-vtt-original-modules/main/modules/private-parchment/module.json",
+  "download": "https://github.com/chengbainian/foundry-vtt-original-modules/releases/latest/download/private-parchment.zip"
+}

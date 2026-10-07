@@ -1,0 +1,45 @@
+name: Validate and package original Foundry modules
+
+on:
+  push:
+    branches: [main]
+    tags: ["v*.*.*"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Validate manifests, licenses, and AI disclosures
+        run: node tools/validate-modules.mjs
+      - name: Syntax-check module JavaScript
+        shell: pwsh
+        run: |
+          $files = Get-ChildItem modules -Recurse -File | Where-Object { $_.Extension -in '.js', '.mjs' }
+          foreach ($file in $files) {
+            node --check $file.FullName
+            if ($LASTEXITCODE -ne 0) { throw "Syntax check failed: $($file.FullName)" }
+          }
+
+  release:
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs: validate
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Package allowlisted modules
+        shell: pwsh
+        run: ./tools/package-modules.ps1
+      - name: Publish module ZIPs
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: pwsh
+        run: gh release create "${{ github.ref_name }}" dist/*.zip --verify-tag --title "${{ github.ref_name }}" --generate-notes

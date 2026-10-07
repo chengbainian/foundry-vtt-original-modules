@@ -1,0 +1,28 @@
+{
+  "id": "madness-fx",
+  "title": "引爆疯狂视觉效果（Madness FX）",
+  "description": "玩家屏幕烙铁烧灼闪光 + 血焰滤镜 + 文字，强度随引爆层数递增。配合「引爆疯狂」宏使用。",
+  "version": "1.3.0-v13-port.1",
+  "compatibility": { "minimum": "13", "verified": "13.351", "maximum": "13" },
+  "esmodules": [],
+  "scripts": ["script.js"],
+  "socket": true,
+  "relationships": {
+    "requires": [
+      {
+        "id": "socketlib",
+        "type": "module",
+        "compatibility": {}
+      }
+    ]
+  },
+  "url": "https://github.com/chengbainian/foundry-vtt-original-modules",
+  "manifest": "https://raw.githubusercontent.com/chengbainian/foundry-vtt-original-modules/main/modules/madness-fx/module.json",
+  "download": "https://github.com/chengbainian/foundry-vtt-original-modules/releases/latest/download/madness-fx.zip",
+  "license": "LICENSE",
+  "readme": "README.md",
+  "authors": [
+    { "name": "Cuujm" },
+    { "name": "Codex, DeepSeek, Claude (AI-assisted; see AI_ASSISTED.md)" }
+  ]
+}

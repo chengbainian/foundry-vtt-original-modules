@@ -1,0 +1,90 @@
+{
+  "id": "battle-transitions",
+  "title": "战斗转场与时空漩涡合并版（Battle Transitions + Scene Warp）",
+  "description": "面向 Foundry V13 的战斗转场与时空漩涡合并版，包含可管理、可扩展的电影转场效果包。",
+  "version": "2.0.14-cinematic-v13.2",
+  "library": "false",
+  "compatibility": {
+    "minimum": 11,
+    "verified": 13,
+    "maximum": 13
+  },
+  "authors": [
+    {
+      "name": "Unarekin",
+      "url": "https://github.com/Unarekin",
+      "discord": "unarekin"
+    },
+    {
+      "name": "Cuujm (V13 maintainer)"
+    }
+  ],
+  "relationships": {
+    "systems": [],
+    "requires": [
+      {
+        "id": "color-picker",
+        "type": "module",
+        "manifest": "https://github.com/Larkinabout/fvtt-color-picker/releases/latest/download/module.json",
+        "compatibility": {
+          "verified": "1.3"
+        }
+      },
+      {
+        "id": "socketlib",
+        "type": "module",
+        "manifest": "https://raw.githubusercontent.com/manuelVo/foundryvtt-socketlib/master/module.json",
+        "compatibility": {
+          "verified": "1.1.0"
+        }
+      },
+      {
+        "id": "lib-wrapper",
+        "type": "module",
+        "manifest": "https://github.com/ruipin/fvtt-lib-wrapper/releases/download/v1.13.2.0/module.json",
+        "compatibility": {
+          "verified": "1.13.2.0"
+        }
+      }
+    ]
+  },
+  "esmodules": [
+    "module.js",
+    "scripts/scene-warp/scene-warp-transitions.js",
+    "scripts/cinematic-presets.js"
+  ],
+  "styles": [
+    "styles/module.css",
+    "vendor/jquery-ui.min.css",
+    "styles/scene-warp-transitions.css"
+  ],
+  "scripts": [
+    "greensock/dist/gsap.min.js",
+    "vendor/pixi-filters.js",
+    "vendor/jquery-ui.min.js",
+    "vendor/lunr.min.js",
+    "vendor/jquery.dragOptions.js"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "languages/en.json"
+    }
+  ],
+  "url": "https://github.com/chengbainian/foundry-vtt-original-modules",
+  "manifest": "https://raw.githubusercontent.com/chengbainian/foundry-vtt-original-modules/main/modules/battle-transitions-scene-warp/module.json",
+  "download": "https://github.com/chengbainian/foundry-vtt-original-modules/releases/latest/download/battle-transitions.zip",
+  "license": "LICENSE",
+  "readme": "README.md",
+  "socket": true,
+  "packs": [
+    {
+      "name": "bt-sample-macros",
+      "label": "Battle Transitions",
+      "path": "./packs/bt-sample-macros",
+      "type": "Macro"
+    }
+  ],
+  "media": []
+}
